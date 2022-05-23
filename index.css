@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 400px;
+}
+#hdr{
+    width: 80px;
+    color: white;
+    background-color: darkgrey;
+    padding-left: 20px;
+}
+#button-join {
+    background-color: green;
+    color: white;
+    width: 60px;
+    height: 30px;
+    border-radius: 30px;
+    }
+#button-leave {
+        background-color: red;
+        color: white;
+        width: 60px;
+        height: 30px;
+        border-radius: 30px;
+        }
+#video-play {
+    display: block;
+    position: fixed;
+    background: none;
+    width: 320px;
+}
+.controls {
+    display : block;
+    position: fixed;
+    height: 40px;
+    padding-left: 20px;
+    padding-top: 10px;
+}

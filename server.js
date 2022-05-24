@@ -14,3 +14,7 @@ app.listen(port, () => {
 app.get('/',(req,res) => {
   res.sendFile(__dirname + '/index.html');
 });
+
+app.get('/path/:name', function(req, res) {
+  console.log("tagId is set to " + req.params.name);
+});

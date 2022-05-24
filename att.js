@@ -2,18 +2,7 @@
     const AccessToken = require('twilio').jwt.AccessToken;
     const eventID = "EVENT_ID_Room_Name";
     const VideoGrant = AccessToken.VideoGrant;
-
     const { createLocalTracks, createLocalVideoTrack, connect } = require('twilio-video');
-
-    const twilioAccountSid = "ACc69d00af99171ab03e90e5011747f9d5";
-    const twilioApiKey = "SK9d565e42549d33f38c6636d237db14c6";
-    const twilioApiSecret = "XU7Dk6ebqE6JIXGjXXUfce3DhxCohbW9";
-    
-    const joinButton = document.getElementById("btn-start");
-    const leaveButton = document.getElementById("btn-end");
-    const modalCtrl = document.querySelector(".ctrl")
-    const headerVideo = document.getElementById("hdr");
-    const modalVideo = document.querySelector(".modal");
 
     const Twilio = require('twilio-video');
     const identity = "marc@gmail.com";
@@ -67,15 +56,7 @@
                 joinButton.disabled = true;
                 leaveButton.disabled = false;
 //                videoTrack = { width : 640, height: 480 };
-
-var queryString = window.location.search;
-console.log("query string is: ", queryString);
-var urlParams = new URLSearchParams(queryString);
-queryString = urlParams.append('size', 'xl');
-console.log("query string is: ", queryString);
-
-
-});
+            });
     }
     leaveButton.onclick = () => {
         modalVideo.style.display = "none";
@@ -85,7 +66,7 @@ console.log("query string is: ", queryString);
   //      joinButtonProp.style.displayed = "none";
     //    leaveButtonProp.style.displayed = "none";
     }
-    //          room.on("participantDisconnected", participantDisconnected);
+                //          room.on("participantDisconnected", participantDisconnected);
 //                room.once("disconnected", (error) => {
  //                   room.participants.forEach(participantDisconnected)}
     //        });

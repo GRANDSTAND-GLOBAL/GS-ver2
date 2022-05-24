@@ -14,3 +14,9 @@ app.listen(port, () => {
 app.get('/',(req,res) => {
   res.sendFile(__dirname + '/index.html');
 });
+
+const queryString = window.location.search;
+console.log(queryString);
+const urlParms = new URLSearchParams(queryString);
+const eventID = urlParms.get('eventID');
+console.log("eventID is: ", eventID);

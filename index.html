@@ -8,16 +8,23 @@
     <link rel="stylesheet" href="index.css">
 </head>
   <body>
-      <div class="modal">
-        <div id="hdr"></div>
-        <video id="video-play" autoplay muted="true" width="320"
-            height="240"></video>
+      <div class="host" id="host-div">
+        <div class="modal">
+          <div id="hdr"></div>
+          <video id="video-play" autoplay muted="true" width="320"
+              height="240"></video>
+        </div>
+        <div class="ctrl" id="ctrl-div">
+            <button id="btn-start">Start</button>
+            <button id="btn-end">End</button>  
+        </div>   
       </div>
-      <div class="controls" id="controls-div">
-          <button id="button-join" disabled>Start</button>
-          <button id="button-leave" disabled>End</button>  
-      </div> 
-  </body>
+      <div class="att" id="att-div">
+        <div>att hdr
+          <button id="btn-att-end">stuff</button>
+        </div>
+      </div>
+   </body>
   <script src="//media.twiliocdn.com/sdk/js/video/releases/2.3.0/twilio-video.min.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="bundle.js"></script>

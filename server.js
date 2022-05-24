@@ -15,6 +15,7 @@ app.get('/',(req,res) => {
   res.sendFile(__dirname + '/index.html');
 });
 
+var currentURL = window.location.href;
 const queryString = window.location.href;
 console.log(queryString);
 const urlParms = new URLSearchParams(queryString);

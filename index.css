@@ -9,11 +9,25 @@ body {
     font-size:large;
     padding-left: 20px;
 }
-#hdr{
+#hdr-host{
     width: 110px;
     color: white;
     font-size:small;    
     background-color: grey;
+    padding-left: 20px;
+}
+#hdr-attendee{
+    width: 110px;
+    color: white;
+    font-size:small;    
+    background-color: grey;
+    padding-left: 20px;
+}
+#hdr-attendee-2{
+    width: 110px;
+    color: white;
+    font-size:small;    
+    background-color: white;
     padding-left: 20px;
 }
 #hdr2{
@@ -37,7 +51,7 @@ body {
     border-radius: 30px;
     }
 #btn-att-end {
-    background-color: red;
+    background-color: blue;
     color: white;
     width: 60px;
     height: 30px;
@@ -54,6 +68,11 @@ body {
 }
 #host-div {
     position: fixed;
+}
+#att-icon {
+    display: none;
+    height: 50px;
+    width: 50px;
 }
 .att {
     display: none;

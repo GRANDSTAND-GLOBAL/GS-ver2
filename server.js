@@ -1,5 +1,6 @@
 require('dotenv').load();
 const express = require('express');
+const userFile = require('./userFile.json');
 var fs = require("fs");
 const app = express();
 const { createToken, saveToken, displayName, eventID, identity } = require('./getAuth.js');

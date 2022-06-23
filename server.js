@@ -19,6 +19,7 @@ let userDef = "{ ";
       userDef += '"identity" : ' + JSON.stringify(identity) + ", ";
       userDef += '"displayName" : ' + JSON.stringify(displayName) + " }";      
     fs.writeFileSync('./userFile.json', userDef);
+      console.log("write is: ", userDef);
       next();
   });   
 

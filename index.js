@@ -1,12 +1,16 @@
   'use strict';
     const { createLocalTracks, createLocalVideoTrack, connect } = require('twilio-video');
     
-    const { createToken, tokenID } = require('./getAuth.js');
-
+    const { createToken } = require('./getAuth.js');
+    const userFile = require('./userFile.json');
+    const eventID = userFile.eventID;
+    const identity = userFile.identity;
+    const displayName = userFile.displayName;
+    
     const pageHeader = document.getElementById("page-header");
     const joinButton = document.getElementById("btn-start");
     const leaveButton = document.getElementById("btn-end");
-     const clearButton = document.getElementById("btn-att-end");
+    const clearButton = document.getElementById("btn-att-end");
     const modalCtrl = document.querySelector(".ctrl")
     const headerVideo = document.getElementById("hdr-host");
     const headerVideoA = document.getElementById("hdr-attendee");
@@ -16,22 +20,12 @@
 
     const Twilio = require('twilio-video');
 
-    const identity = "marc@gmail.com";
-    const eventID = "EVENT_ID_Room_Name";
-    const displayName = "Bob";
-
     let token = "";
 
-    token = createToken( eventID, identity, displayName );
-    //userIDs.push(userID)
+    token = createToken();
 
     headerVideo.innerText = "Attendee";
     pageHeader.innerText = "Host";
-
-    console.log ("++display name:", displayName);
-    console.log ("++eventID:", eventID);
-    console.log ("++identity:", identity);
-    console.log ("++token:", token);
 
     // preview screen
       createLocalVideoTrack({
@@ -48,7 +42,7 @@
 
       joinButton.onclick = () => {
       
-      connect(token, { 
+      connect( token, { 
             audio: true,
             name: eventID,
             video: { width: 640 }
@@ -56,8 +50,6 @@
                 console.log(`Successfully joined a Room: ${room.name}`);
                 const localParticipant = room.localParticipant;
                 console.log(`Connected to the Room as LocalParticipant "${localParticipant.identity}"`);
-//              videoRoom = room;
-                console.log("participant connected");
                 joinButton.disabled = true;
             });
     }

@@ -1,10 +1,6 @@
-require('dotenv').load();
 const express = require('express');
 const fs = require("fs");
-//const userFile = require('./userFile.json');
-
 const app = express();
-const { createToken, saveToken, displayName, eventID, identity } = require('./getAuth.js');
 
 let userSpec = "";
 
@@ -20,8 +16,6 @@ let userSpec = "";
       userSpec += '"identity" : ' + JSON.stringify(identity) + ", ";
       userSpec += '"displayName" : ' + JSON.stringify(displayName) + " }";      
     fs.writeFileSync('./userFile.json', userSpec);
-    console.log("write is: ", userSpec);
-
       next();
   });   
 

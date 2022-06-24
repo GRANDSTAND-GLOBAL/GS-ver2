@@ -13,7 +13,7 @@ let userSpec = "";
   });
 
   app.get('/', (req, res, next) => {
-    let displayName = req.query.displayname;
+    let displayName = req.query.displayName;
     let eventID = req.query.eventID;
     let identity = req.query.identity;
       userSpec = '{ "eventID" : ' + JSON.stringify(eventID) + ", ";

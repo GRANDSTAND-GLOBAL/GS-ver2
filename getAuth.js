@@ -11,13 +11,17 @@
   const twilioApiKey = "SK9d565e42549d33f38c6636d237db14c6";
   const twilioApiSecret = "XU7Dk6ebqE6JIXGjXXUfce3DhxCohbW9";
 
-  const eventID = userFile.eventID;
-  const identity = userFile.identity;
-  const displayName = userFile.displayName;
+  var eventID;
+  var identity;
+  
+
+ // const eventID = userFile.eventID;
+ // const identity = userFile.identity;
+ // const displayName = userFile.displayName;
   
   let tokenID = "";
 
-  function createToken() {
+  function createToken( eventID, identity ) {
     const videoGrant = new VideoGrant({
       room: eventID
     });

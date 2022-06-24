@@ -1,4 +1,4 @@
-  'use strict';
+    'use strict';
     const { createLocalTracks, createLocalVideoTrack, connect } = require('twilio-video');
     
     const { createToken } = require('./getAuth.js');
@@ -22,8 +22,13 @@
 
     let token = "";
 
-    token = createToken();
+    console.log('identity: ', identity);
+    console.log('eventID', eventID);
+    console.log('displayName',displayName);
 
+    token = createToken();
+    console.log('token', token);
+    
     headerVideo.innerText = "Attendee";
     pageHeader.innerText = "Host";
 

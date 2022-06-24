@@ -1,9 +1,11 @@
-    'use strict';
+use strict';
     const { createLocalTracks, createLocalVideoTrack, connect } = require('twilio-video');
     
     const { createToken } = require('./getAuth.js');
+    const fs = require("fs");
     const userFile = require('./userFile.json');
-    var fs = require("fs");
+    const Twilio = require('twilio-video');
+    
     const pageHeader = document.getElementById("page-header");
     const joinButton = document.getElementById("btn-start");
     const leaveButton = document.getElementById("btn-end");
@@ -14,13 +16,14 @@
     const displayIcon = document.getElementById("att-icon");
     const modalVideo = document.querySelector(".modal");
     const modalAtt = document.querySelector(".att");
-
-    const Twilio = require('twilio-video');
-
-    fs.readFileSync('./userFile.json', userDef);
+    
     const eventID = userFile.eventID;
     const identity = userFile.identity;
     const displayName = userFile.displayName;
+
+    console.log("eventID read is: ", userFile.eventID);
+    console.log("identity read is: ", userFile.identity);
+    console.log("displayName read is: ", userFile.displayName);
 
     let token = "";
 

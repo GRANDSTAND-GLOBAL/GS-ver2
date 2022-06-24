@@ -1,8 +1,10 @@
-  'use strict';
+   'use strict';
     const { createLocalTracks, createLocalVideoTrack, connect } = require('twilio-video');
     
     const { createToken } = require('./getAuth.js');
     const fs = require("fs");
+    const fsPromises = fs.promises;
+
     const userFile = require('./userFile.json');
     const Twilio = require('twilio-video');
     
@@ -16,14 +18,36 @@
     const displayIcon = document.getElementById("att-icon");
     const modalVideo = document.querySelector(".modal");
     const modalAtt = document.querySelector(".att");
-    
-    const eventID = userFile.eventID;
-    const identity = userFile.identity;
-    const displayName = userFile.displayName;
 
-    console.log("eventID read is: ", userFile.eventID);
-    console.log("identity read is: ", userFile.identity);
-    console.log("displayName read is: ", userFile.displayName);
+    let eventID = "";
+    let identity = "";
+    let displayName = "";
+  
+    getUser();
+    joinButton.onclick = () => {
+      startRoom();
+    }
+
+    function getUser() {
+      fetch('./userFile.json')
+      .then(response => response.json())
+      .then(jsonResponse => {
+          console.log('here is input', jsonResponse)
+          console.log("object eventID is: ", jsonResponse.eventID );
+          eventID = jsonResponse.eventID;
+          identity = jsonResponse.identity;
+          displayName = jsonResponse.displayName;
+          console.log("object eventID is now: ", eventID );  
+        });
+
+      }
+
+function startRoom() {
+    console.log("object eventID is still: ", eventID );
+
+    console.log("eventID read is: ", eventID);
+    console.log("identity read is: ", identity);
+    console.log("displayName read is: ", displayName);
 
     let token = "";
 
@@ -31,7 +55,7 @@
     console.log('eventID', eventID);
     console.log('displayName',displayName);
 
-    token = createToken();
+    token = createToken( eventID, identity );
     console.log('token', token);
     
     headerVideo.innerText = "Attendee";
@@ -76,3 +100,4 @@
     clearButton.onclick = () => {
         displayIcon.style.display = "block";
         }
+      }

@@ -1,4 +1,4 @@
-  'use strict';
+'use strict';
   require('dotenv').load();
   //const fs = require("fs");
   const userFile = require('./userFile.json');
@@ -13,11 +13,6 @@
 
   var eventID;
   var identity;
-  
-
- // const eventID = userFile.eventID;
- // const identity = userFile.identity;
- // const displayName = userFile.displayName;
   
   let tokenID = "";
 

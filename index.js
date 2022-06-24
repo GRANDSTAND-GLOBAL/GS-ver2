@@ -1,4 +1,4 @@
-   'use strict';
+  'use strict';
     const { createLocalTracks, createLocalVideoTrack, connect } = require('twilio-video');
     
     const { createToken } = require('./getAuth.js');
@@ -25,7 +25,6 @@
   
     getUser();
     joinButton.onclick = () => {
-      console.log ('after getUser');
       startRoom();
     }
 
@@ -33,33 +32,19 @@
       fetch('./userFile.json')
       .then(response => response.json())
       .then(jsonResponse => {
-          console.log('here is input', jsonResponse)
-          console.log("object eventID is: ", jsonResponse.eventID );
           eventID = jsonResponse.eventID;
           identity = jsonResponse.identity;
           displayName = jsonResponse.displayName;
-          console.log("object eventID is now: ", eventID );  
         });
 
       }
 
 function startRoom() {
-    console.log("object eventID is still: ", eventID );
-
-    console.log("eventID read is: ", eventID);
-    console.log("identity read is: ", identity);
-    console.log("displayName read is: ", displayName);
-
     let token = "";
 
-    console.log('identity: ', identity);
-    console.log('eventID', eventID);
-    console.log('displayName',displayName);
-
     token = createToken( eventID, identity );
-    console.log('token', token);
     
-    headerVideo.innerText = "Attendee";
+    headerVideo.innerText = eventID;
     pageHeader.innerText = "Host";
 
     // preview screen

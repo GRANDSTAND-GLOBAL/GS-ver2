@@ -2,10 +2,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 .flex-container {
-    height: 380px;
+    height: 370px;
     width: 580px;
     background-color: white;
-    border: 5px solid black;
+    border: 1px solid black;
     box-sizing: border-box;
 }
 #page-header{

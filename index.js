@@ -25,6 +25,7 @@
   
     getUser();
     joinButton.onclick = () => {
+      console.log ('after getUser');
       startRoom();
     }
 

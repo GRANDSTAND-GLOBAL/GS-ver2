@@ -1,11 +1,12 @@
 require('dotenv').load();
 const express = require('express');
+const fs = require("fs");
 //const userFile = require('./userFile.json');
-var fs = require("fs");
+
 const app = express();
 const { createToken, saveToken, displayName, eventID, identity } = require('./getAuth.js');
 
-let userDef = "";
+let userSpec = "";
 
   app.use(function(res, req, next) {
     next();
@@ -15,12 +16,11 @@ let userDef = "";
     let displayName = req.query.displayname;
     let eventID = req.query.eventID;
     let identity = req.query.identity;
-      userDef = '{ ';
-      userDef += '"eventID" : ' + JSON.stringify(eventID) + ", ";
-      userDef += '"identity" : ' + JSON.stringify(identity) + ", ";
-      userDef += '"displayName" : ' + JSON.stringify(displayName) + " }";      
-    fs.writeFileSync('./userFile.json', userDef);
-    console.log("write is: ", userDef);
+      userSpec = '{ "eventID" : ' + JSON.stringify(eventID) + ", ";
+      userSpec += '"identity" : ' + JSON.stringify(identity) + ", ";
+      userSpec += '"displayName" : ' + JSON.stringify(displayName) + " }";      
+    fs.writeFileSync('./userFile.json', userSpec);
+    console.log("write is: ", userSpec);
 
       next();
   });   

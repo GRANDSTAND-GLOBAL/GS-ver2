@@ -1,4 +1,4 @@
-use strict';
+  'use strict';
     const { createLocalTracks, createLocalVideoTrack, connect } = require('twilio-video');
     
     const { createToken } = require('./getAuth.js');

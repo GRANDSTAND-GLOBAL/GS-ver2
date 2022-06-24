@@ -1,6 +1,8 @@
   'use strict';
   require('dotenv').load();
+  //const fs = require("fs");
   const userFile = require('./userFile.json');
+
   const { createLocalTracks, createLocalVideoTrack, connect } = require('twilio-video');
   const AccessToken = require('twilio').jwt.AccessToken;
   const VideoGrant = AccessToken.VideoGrant;

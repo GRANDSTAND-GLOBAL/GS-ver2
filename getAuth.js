@@ -1,4 +1,4 @@
-'use strict';
+  'use strict';
   require('dotenv').load();
   const userFile = require('./userFile.json');
   const { createLocalTracks, createLocalVideoTrack, connect } = require('twilio-video');
@@ -31,4 +31,4 @@
     return tokenID;
   }
   
-module.exports = { createToken, tokenID };   
+module.exports = { createToken };

@@ -3,10 +3,7 @@
     
     const { createToken } = require('./getAuth.js');
     const userFile = require('./userFile.json');
-    const eventID = userFile.eventID;
-    const identity = userFile.identity;
-    const displayName = userFile.displayName;
-    
+    var fs = require("fs");
     const pageHeader = document.getElementById("page-header");
     const joinButton = document.getElementById("btn-start");
     const leaveButton = document.getElementById("btn-end");
@@ -19,6 +16,11 @@
     const modalAtt = document.querySelector(".att");
 
     const Twilio = require('twilio-video');
+
+    fs.readFileSync('./userFile.json', userDef);
+    const eventID = userFile.eventID;
+    const identity = userFile.identity;
+    const displayName = userFile.displayName;
 
     let token = "";
 

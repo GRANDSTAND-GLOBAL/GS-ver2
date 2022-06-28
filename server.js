@@ -1,3 +1,4 @@
+require('dotenv').load();
 const express = require('express');
 const fs = require("fs");
 const app = express();
@@ -12,10 +13,11 @@ let userSpec = "";
     let displayName = req.query.displayName;
     let eventID = req.query.eventID;
     let identity = req.query.identity;
+    let userType = req.query.userType;
       userSpec = '{ "eventID" : ' + JSON.stringify(eventID) + ", ";
       userSpec += '"identity" : ' + JSON.stringify(identity) + ", ";
-      userSpec += '"displayName" : ' + JSON.stringify(displayName) + " }";      
-    fs.writeFileSync('./userFile.json', userSpec);
+      userSpec += '"displayName" : ' + JSON.stringify(displayName) + ", ";      
+      userSpec += '"userType" : ' + JSON.stringify(userType) + " }";          fs.writeFileSync('./userFile.json', userSpec);
       next();
   });   
 

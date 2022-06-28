@@ -10,24 +10,17 @@
   <body>
       <div class="flex-container">
         <h1 id="page-header">top of page</h1>
+        <div id="sub-header"></div>
         <div class="host" id="host-div">
-          <div class="modal">
-            <div id="hdr-host"></div>
             <video id="video-play" autoplay muted="true" width="320"
                 height="240"></video>
-          </div>
-          <div class="ctrl" id="ctrl-div">
-              <button id="btn-start">Start</button>
-              <button id="btn-end">End</button>  
-          </div>   
         </div>
-        <div class="att" id="att-div">
-          <div id="hdr-attendee">attendee page</div>
-          <div id="hdr-attendee-2"> . </div>
-          <img id="att-icon" src="favicon.ico" >
-            <button id="btn-att-end">leave</button>
+        <div class="ctrl" id="ctrl-div">
+          <button style="float: center; width: 60px" id="btn-start-sync">Start</button>
+          <button style="float: left; width: 60px" id="btn-start">Preview</button>
+          <button style="float: right; width: 60px" id="btn-end">End</button>
+          <button style="float: center; width: 60px" id="btn-att-end">leave</button>
         </div>
-        <div id="111"></div>
       </div>
    </body>
   <script src="//media.twiliocdn.com/sdk/js/video/releases/2.3.0/twilio-video.min.js"></script>

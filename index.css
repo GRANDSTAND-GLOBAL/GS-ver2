@@ -2,11 +2,22 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 .flex-container {
-    height: 370px;
-    width: 580px;
+    height: 400px;
+    width: 600px;
     background-color: white;
-    border: 1px solid black;
+    border: 5px solid black;
     box-sizing: border-box;
+}
+.ctrl {
+    display : block;
+    position: fixed;
+    height: 110px;
+    width: 170px;
+    padding-left: 20px;
+    padding-top: 280px;
+}
+.host {
+    display: block;
 }
 #page-header{
     width: 150px;
@@ -15,32 +26,21 @@ body {
     font-size:large;
     padding-left: 20px;
 }
-#hdr-host{
+#sub-header{
     width: 110px;
     color: white;
     font-size:small;    
     background-color: grey;
     padding-left: 20px;
 }
-#hdr-attendee{
-    width: 110px;
+#btn-start-sync {
+    background-color: blue;
     color: white;
-    font-size:small;    
-    background-color: grey;
-    padding-left: 20px;
-}
-#hdr-attendee-2{
-    width: 110px;
-    color: white;
-    font-size:small;    
-    background-color: white;
-    padding-left: 20px;
-}
-#hdr2{
-    width: 110px;
-    font-size:small;    
-    padding-left: 20px;
-    color:aliceblue;
+    width: 50px;
+    height: 30px;
+    border-radius: 30px;
+    box-sizing: content-box;
+    display: none;
 }
 #btn-start {
     background-color: green;
@@ -48,24 +48,27 @@ body {
     width: 60px;
     height: 30px;
     border-radius: 30px;
-    }
+    box-sizing: content-box;
+    display: none;
+}
 #btn-end {
     background-color: red;
     color: white;
     width: 60px;
     height: 30px;
     border-radius: 30px;
+    box-sizing: content-box;
+    display: none;
     }
 #btn-att-end {
     background-color: blue;
     color: white;
-    width: 60px;
+    width: 50px;
     height: 30px;
-    border-top: 20px;
     border-radius: 30px;
-    display: block;
-    position:relative;
-        }
+    box-sizing: content-box;
+    display: none;
+    }
 #video-play {
     display: block;
     position: fixed;
@@ -75,18 +78,8 @@ body {
 #host-div {
     position: fixed;
 }
-#att-icon {
+#display-icon {
     display: none;
     height: 50px;
     width: 50px;
-}
-.att {
-    display: none;
-}
-.ctrl {
-    display : block;
-    position: fixed;
-    height: 40px;
-    padding-left: 20px;
-    padding-top: 10px;
 }

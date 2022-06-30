@@ -8,20 +8,34 @@
     <link rel="stylesheet" href="index.css">
 </head>
   <body>
-      <div class="flex-container">
-        <h1 id="page-header">top of page</h1>
-        <div id="sub-header"></div>
-        <div class="host" id="host-div">
-            <video id="video-play" autoplay muted="true" width="320"
+      <div class="preview-container">
+        <div id="preview-header">top of page</div>
+        <div id="preview-sub-header">line two</div>
+        <div class="preview" id="preview-div">
+            <video id="video-preview" autoplay muted="true" width="320"
                 height="240"></video>
         </div>
-        <div class="ctrl" id="ctrl-div">
-          <button style="float: center; width: 60px" id="btn-start-sync">Start</button>
-          <button style="float: left; width: 60px" id="btn-start">Preview</button>
-          <button style="float: right; width: 60px" id="btn-end">End</button>
+        <div class="preview-ctrl" id="ctrl-div">
+          <button style="float: left; width: 60px" id="btn-preview">Preview</button>
+          <button style="float: left; width: 60px" id="btn-join">Join</button>
+          <button style="float: left; width: 60px" id="btn-end">End</button>
           <button style="float: center; width: 60px" id="btn-att-end">leave</button>
         </div>
       </div>
+    <div class="play-container">
+      <div id="play-header">top of page</div>
+      <div id="play-sub-header">line two</div>   
+        <div class="play" id="play-div">
+            <video id="video-play" autoplay muted="true" width="600"
+                height="400"></video>
+        </div>
+        <img id="display-icon" src="./favicon.ico">
+        <div class="play-ctrl" id="ctrl-div">
+          <button style="float: left; width: 60px" id="btn-play">Play</button>
+        </div>
+
+      </div>
+    </div>
    </body>
   <script src="//media.twiliocdn.com/sdk/js/video/releases/2.3.0/twilio-video.min.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

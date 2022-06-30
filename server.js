@@ -2,7 +2,6 @@ require('dotenv').load();
 const express = require('express');
 const fs = require("fs");
 const app = express();
-
 let userSpec = "";
 
   app.use(function(res, req, next) {
@@ -14,10 +13,16 @@ let userSpec = "";
     let eventID = req.query.eventID;
     let identity = req.query.identity;
     let userType = req.query.userType;
+
       userSpec = '{ "eventID" : ' + JSON.stringify(eventID) + ", ";
       userSpec += '"identity" : ' + JSON.stringify(identity) + ", ";
-      userSpec += '"displayName" : ' + JSON.stringify(displayName) + ", ";      
-      userSpec += '"userType" : ' + JSON.stringify(userType) + " }";          fs.writeFileSync('./userFile.json', userSpec);
+      userSpec += '"displayName" : ' + JSON.stringify(displayName) + ", ";
+      userSpec += '"account_Sid" : ' + JSON.stringify(process.env.TWILIO_ACCOUNT_SID) + ", ";
+      userSpec += '"api_Key" : ' + JSON.stringify(process.env.TWILIO_API_KEY) + ", ";
+      userSpec += '"api_Secret" : ' + JSON.stringify(process.env.TWILIO_API_SECRET) + ", ";            
+      userSpec += '"userType" : ' + JSON.stringify(userType) + " }";          
+      
+      fs.writeFileSync('./userFile.json', userSpec);
       next();
   });   
 

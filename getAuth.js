@@ -1,4 +1,4 @@
-  'use strict';
+'use strict';
   const userFile = require('./userFile.json');
   const { createLocalTracks, createLocalVideoTrack, connect } = require('twilio-video');
   const AccessToken = require('twilio').jwt.AccessToken;

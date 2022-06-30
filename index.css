@@ -2,15 +2,15 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 .preview-container {
-    height: 400px;
-    width: 600px;
+    height: 350px;
+    width: 500px;
     background-color: white;
     border: 1px solid darkgray;
     box-sizing: border-box;
 }
 .play-container {
-    height: 200px;
-    width: 300px;
+    height: 250px;
+    width: 350px;
     background-color: white;
     border: 1px solid darkgray;
     box-sizing: border-box;
@@ -22,10 +22,15 @@ body {
     height: 110px;
     width: 170px;
     padding-left: 20px;
-    padding-top: 280px;
+    padding-top: 250px;
 }
-.ctrl {
-    display: block;
+.play-ctrl {
+    display : block;
+    position: fixed;
+    height: 110px;
+    width: 170px;
+    padding-left: 20px;
+    padding-top: 50px;
 }
 #preview-header {
     width: 150px;
@@ -55,15 +60,6 @@ body {
     background-color: grey;
     padding-left: 20px;
 }
-#btn-start-sync {
-    background-color: blue;
-    color: white;
-    width: 50px;
-    height: 30px;
-    border-radius: 30px;
-    box-sizing: content-box;
-    display: none;
-}
 #btn-preview {
     background-color: blue;
     color: white;
@@ -89,7 +85,7 @@ body {
     height: 30px;
     border-radius: 30px;
     box-sizing: content-box;
-    display: block;
+    display: none;
 }
 #btn-end {
     background-color: red;
@@ -100,7 +96,7 @@ body {
     box-sizing: content-box;
     display: none;
     }
-#btn-att-end {
+#btn-leave {
     background-color: blue;
     color: white;
     width: 50px;
@@ -109,6 +105,15 @@ body {
     box-sizing: content-box;
     display: none;
     }
+#btn-clear {
+        background-color: blue;
+        color: white;
+        width: 50px;
+        height: 30px;
+        border-radius: 30px;
+        box-sizing: content-box;
+        display: none;
+        }
 #video-preview {
     display: block;
     position: fixed;
@@ -124,7 +129,12 @@ body {
 #preview-div {
     position: fixed;
 }
-#display-icon {
+#play-icon {
+    display: none;
+    height: 50px;
+    width: 50px;
+}
+#preview-icon {
     display: none;
     height: 50px;
     width: 50px;

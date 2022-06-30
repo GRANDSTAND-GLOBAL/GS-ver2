@@ -1,14 +1,22 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
-.flex-container {
+.preview-container {
     height: 400px;
     width: 600px;
     background-color: white;
-    border: 5px solid darkgray;
+    border: 1px solid darkgray;
     box-sizing: border-box;
 }
-.ctrl {
+.play-container {
+    height: 200px;
+    width: 300px;
+    background-color: white;
+    border: 1px solid darkgray;
+    box-sizing: border-box;
+    display: none;
+}
+.preview-ctrl {
     display : block;
     position: fixed;
     height: 110px;
@@ -16,18 +24,32 @@ body {
     padding-left: 20px;
     padding-top: 280px;
 }
-.host {
+.ctrl {
     display: block;
 }
-#page-header{
+#preview-header {
     width: 150px;
     color: white;
     background-color: blue;
     font-size:large;
     padding-left: 20px;
 }
-#sub-header{
-    width: 110px;
+#play-header {
+    width: 150px;
+    color: white;
+    background-color: blue;
+    font-size:large;
+    padding-left: 20px;
+}
+#preview-sub-header {
+    width: 200px;
+    color: white;
+    font-size:small;    
+    background-color: grey;
+    padding-left: 20px;
+}
+#play-sub-header {
+    width: 200px;
     color: white;
     font-size:small;    
     background-color: grey;
@@ -42,7 +64,16 @@ body {
     box-sizing: content-box;
     display: none;
 }
-#btn-start {
+#btn-preview {
+    background-color: blue;
+    color: white;
+    width: 60px;
+    height: 30px;
+    border-radius: 30px;
+    box-sizing: content-box;
+    display: none;
+}
+#btn-join {
     background-color: green;
     color: white;
     width: 60px;
@@ -50,6 +81,15 @@ body {
     border-radius: 30px;
     box-sizing: content-box;
     display: none;
+}
+#btn-play {
+    background-color: green;
+    color: white;
+    width: 60px;
+    height: 30px;
+    border-radius: 30px;
+    box-sizing: content-box;
+    display: block;
 }
 #btn-end {
     background-color: red;
@@ -69,13 +109,19 @@ body {
     box-sizing: content-box;
     display: none;
     }
-#video-play {
+#video-preview {
     display: block;
     position: fixed;
     background: none;
     width: 320px;
 }
-#host-div {
+#video-play {
+    display: block;
+    position: fixed;
+    background: none;
+    width: 640px;
+}
+#preview-div {
     position: fixed;
 }
 #display-icon {

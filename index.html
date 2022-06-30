@@ -15,11 +15,12 @@
             <video id="video-preview" autoplay muted="true" width="320"
                 height="240"></video>
         </div>
-        <div class="preview-ctrl" id="ctrl-div">
+        <img id="preview-icon" src="./favicon.ico">
+        <div class="preview-ctrl" >
           <button style="float: left; width: 60px" id="btn-preview">Preview</button>
-          <button style="float: left; width: 60px" id="btn-join">Join</button>
+          <button style="float: left; width: 60px" id="btn-join" disabled>Join</button>
           <button style="float: left; width: 60px" id="btn-end">End</button>
-          <button style="float: center; width: 60px" id="btn-att-end">leave</button>
+          <button style="float: center; width: 60px" id="btn-leave">leave</button>
         </div>
       </div>
     <div class="play-container">
@@ -29,11 +30,11 @@
             <video id="video-play" autoplay muted="true" width="600"
                 height="400"></video>
         </div>
-        <img id="display-icon" src="./favicon.ico">
-        <div class="play-ctrl" id="ctrl-div">
+        <img id="play-icon" src="./favicon.ico">
+        <div class="play-ctrl" >
           <button style="float: left; width: 60px" id="btn-play">Play</button>
+          <button style="float: left; width: 60px" id="btn-clear">Clear</button>
         </div>
-
       </div>
     </div>
    </body>
